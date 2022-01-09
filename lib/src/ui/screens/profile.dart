@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:instagram/widgets/postgrid.dart';
+import 'package:instagram/src/ui/widgets/postgrid.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -132,32 +132,30 @@ class _ProfilePageState extends State<ProfilePage>
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Container(
-                            child: Row(
-                              children: <Widget>[
-                                Expanded(
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: const Text("Edit Profile"),
-                                    style: ButtonStyle(
-                                        side: MaterialStateProperty.all(
-                                            const BorderSide(
-                                                color: Colors.black,
-                                                width: 1))),
-                                  ),
+                          Row(
+                            children: <Widget>[
+                              Expanded(
+                                child: TextButton(
+                                  onPressed: () {},
+                                  child: const Text("Edit Profile"),
+                                  style: ButtonStyle(
+                                      side: MaterialStateProperty.all(
+                                          const BorderSide(
+                                              color: Colors.black,
+                                              width: 1))),
                                 ),
-                                ExpandIcon(
-                                  padding: const EdgeInsets.all(0),
-                                  isExpanded: _isExpanded,
-                                  color: Colors.black,
-                                  onPressed: (bool isExpanded) {
-                                    setState(() {
-                                      _isExpanded = !isExpanded;
-                                    });
-                                  },
-                                ),
-                              ],
-                            ),
+                              ),
+                              ExpandIcon(
+                                padding: const EdgeInsets.all(0),
+                                isExpanded: _isExpanded,
+                                color: Colors.black,
+                                onPressed: (bool isExpanded) {
+                                  setState(() {
+                                    _isExpanded = !isExpanded;
+                                  });
+                                },
+                              ),
+                            ],
                           ),
                           Visibility(
                             child: const Padding(

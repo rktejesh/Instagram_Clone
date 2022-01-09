@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dashed_circle/dashed_circle.dart';
-import 'package:instagram/widgets/stories_screen.dart';
-
-import '../data.dart';
+import 'package:instagram/src/ui/widgets/stories_screen.dart';
 
 class ProfileStories extends StatefulWidget {
   const ProfileStories({Key? key}) : super(key: key);
@@ -58,12 +56,12 @@ class _ProfileStoriesState extends State<ProfileStories> with TickerProviderStat
         ),
       ),
       onTap: () {
-        controller.forward();
+       /* controller.forward();
         Navigator.of(context)
             .push(
             MaterialPageRoute(
-              builder: (context) => StoryScreen(stories: stories),
-            ));
+              builder: (context) => const StoryScreen(stories: stories),
+            ));*/
       },
     );
   }

@@ -1,4 +1,4 @@
-import 'package:instagram/models/user_model.dart';
+import 'package:instagram/src/models/user.dart';
 
 enum MediaType {
   image,
