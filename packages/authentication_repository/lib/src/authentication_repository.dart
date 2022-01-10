@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'package:authentication_repository/src/Exception/login_error.dart';
+import 'package:authentication_repository/src/exception/login_error.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
