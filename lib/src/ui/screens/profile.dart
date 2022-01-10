@@ -11,8 +11,8 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage>
     with TickerProviderStateMixin {
   late bool _isExpanded;
-  late AnimationController _controller;
-  late Animation<double> _myAnimation;
+  //late AnimationController _controller;
+  //late Animation<double> _myAnimation;
   late TabController _profileTabController;
 
   @override
@@ -20,12 +20,12 @@ class _ProfilePageState extends State<ProfilePage>
     super.initState();
     _profileTabController = TabController(length: 2, vsync: this);
     _isExpanded = true;
-    _controller = AnimationController(
+    /*_controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 200),
-    );
+    );*/
 
-    _myAnimation = CurvedAnimation(curve: Curves.linear, parent: _controller);
+    //_myAnimation = CurvedAnimation(curve: Curves.linear, parent: _controller);
   }
 
   @override

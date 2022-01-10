@@ -4,7 +4,6 @@ import 'package:equatable/equatable.dart';
 import 'package:formz/formz.dart';
 import 'package:instagram/src/models/login/password.dart';
 import 'package:instagram/src/models/login/username.dart';
-import 'package:authentication_repository/src/Exception/LoginError.dart';
 
 part 'login_event.dart';
 part 'login_state.dart';

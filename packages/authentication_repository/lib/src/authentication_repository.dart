@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-
-import 'package:authentication_repository/src/Exception/LoginError.dart';
+import 'package:authentication_repository/src/Exception/login_error.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -47,7 +46,6 @@ class AuthenticationRepository {
       _controller.add(AuthenticationStatus.authenticated);
     } else {
       final parsedJson = jsonDecode(response.body);
-      print(parsedJson['message']);
       throw LogInFailure(parsedJson['message']);
     }
   }

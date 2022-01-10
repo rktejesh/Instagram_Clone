@@ -7,7 +7,6 @@ class UserRepository {
   Future<String?> getUserData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? token = prefs.getString('token');
-    print(token);
     return token;
   }
   Future<User?> getUser() async {

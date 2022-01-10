@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dashed_circle/dashed_circle.dart';
-import 'package:instagram/src/ui/widgets/stories_screen.dart';
 
 class ProfileStories extends StatefulWidget {
   const ProfileStories({Key? key}) : super(key: key);
