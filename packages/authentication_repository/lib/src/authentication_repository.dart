@@ -1,10 +1,11 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:authentication_repository/src/Exception/LoginError.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
-enum AuthenticationStatus { unknown, authenticated, unauthenticated }
+enum AuthenticationStatus { unknown, authenticated, unauthenticated, error }
 
 class AuthenticationRepository {
   Future<void> saveToken(String token) async {
@@ -39,10 +40,15 @@ class AuthenticationRepository {
         },
         body: body);
 
+
     if (response.statusCode == 200) {
       final parsedJson = jsonDecode(response.body);
       saveToken(parsedJson['token']);
       _controller.add(AuthenticationStatus.authenticated);
+    } else {
+      final parsedJson = jsonDecode(response.body);
+      print(parsedJson['message']);
+      throw LogInFailure(parsedJson['message']);
     }
   }
 
