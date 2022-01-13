@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:instagram/src/ui/screens/home_page.dart';
-import 'package:instagram/src/ui/screens/login_page.dart';
+import 'package:instagram/src/ui/screens/authentication/login/login_page.dart';
 import 'package:instagram/src/ui/widgets/splash.dart';
 import 'package:user_repository/user_repository.dart';
 import 'blocs/authentication/authentication_bloc.dart';

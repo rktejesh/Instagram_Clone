@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:instagram/src/blocs/authentication/authentication_bloc.dart';
+import 'package:instagram/src/ui/screens/home.dart';
+import 'package:instagram/src/ui/screens/profile/profile.dart';
+import 'package:instagram/src/ui/screens/search.dart';
+
+import 'createpost.dart';
+import 'notifications.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -11,63 +15,64 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('Home')),
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Builder(
-              builder: (context) {
-                final userId = context.select(
-                      (AuthenticationBloc bloc) => bloc.state.user.id,
-                );
-                return Text('UserID: $userId');
-              },
-            ),
-            ElevatedButton(
-              child: const Text('Logout'),
-              onPressed: () {
-                context
-                    .read<AuthenticationBloc>()
-                    .add(AuthenticationLogoutRequested());
-              },
-            ),
-          ],
+    List<Widget> pages = [
+      const HomeScreen(),
+      const SearchPage(),
+      const CreatePostPage(),
+      const NotificationsPage(),
+      const ProfilePage()
+    ];
+    return DefaultTabController(
+      length: 5,
+      initialIndex: 0,
+      child: Scaffold(
+        body: TabBarView(
+          physics: const NeverScrollableScrollPhysics(),
+            children: pages
+        ),
+        bottomNavigationBar: const TabBar(
+            tabs: [
+              Tab(
+                  icon: Icon(Icons.home_filled)
+              ),
+              Tab(
+                icon: Icon(Icons.search_outlined),
+              ),
+              Tab(
+                icon: Icon(Icons.slow_motion_video_outlined),
+              ),
+              Tab(
+                icon: Icon(Icons.favorite_outline),
+              ),
+              Tab(
+                icon: Icon(Icons.perm_identity),
+              )
+            ],
+          unselectedLabelColor: Colors.black,
+          labelColor: Colors.black,
+          indicatorColor: Colors.transparent,
         ),
       ),
     );
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
 /*
-import 'package:flutter/material.dart';
-import 'package:instagram/src/ui/screens/home.dart';
-import 'package:instagram/src/ui/screens/profile.dart';
-import 'package:instagram/src/ui/screens/search.dart';
-
 import 'createpost.dart';
 import 'notifications.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  static Route route() {
+    return MaterialPageRoute<void>(builder: (_) => const HomePage());
+  }
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
+class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   List<Widget> pages = [
     const HomePage(),
@@ -127,4 +132,26 @@ class _MyHomePageState extends State<MyHomePage>
       ),
     );
   }
-}*/
+}
+*/
+
+/*
+mainAxisSize: MainAxisSize.min,
+children: <Widget>[
+Builder(
+builder: (context) {
+final userId = context.select(
+(AuthenticationBloc bloc) => bloc.state.user.id,
+);
+return Text('UserID: $userId');
+},
+),
+ElevatedButton(
+child: const Text('Logout'),
+onPressed: () {
+context
+    .read<AuthenticationBloc>()
+    .add(AuthenticationLogoutRequested());
+},
+),
+],*/
