@@ -1,4 +1,4 @@
-name: CI/CD
+name: Dart CI
 
 on:
   push:
