@@ -29,6 +29,8 @@ A working Instagram clone written in Flutter using MongoDB as backend.
 </details>
 
 ## Screenshots
+<img src="https://user-images.githubusercontent.com/73354337/165629426-10c1b361-d3ee-48c1-8573-d419c9d77097.jpg" width="200" height="400"/>&nbsp;
+<img src="https://user-images.githubusercontent.com/73354337/165629435-aca4bcf6-9c27-40cf-9061-a39c1bb4e877.jpg" width="200" height="400"/>&nbsp;
 
 
 ## Getting Started
